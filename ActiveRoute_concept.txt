@@ -1,0 +1,28 @@
+		Passing value through link using paramMap concept:::  
+		----------------------------------------------------------------
+ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.products.forEach((p: Product) => {
+        if (p.id == params.id) {
+          this.product = p;
+        }
+      });
+    });
+  }
+
+**************************************************************************************
+
+		Passing value through router link using snapshot::::
+		-------------------------------------------------------------
+
+
+  ngOnInit() {
+      this.products.forEach((p: Product) => {
+        if (p.id == this.route.snapshot.params.id) {
+          this.product = p;
+        }
+      });
+
+  }
+
+****************************************************************************************
